@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="description" content="DeltaConsistency Page">
+  <meta property="og:title" content="DeltaConsistency"/>
+  <meta property="og:description" content="DeltaConsistency Page"/>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>DeltaConsistency</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+ 
+<section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Video-to-Video Face Re-Aging with Delta-Propagated Temporal Consistency</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                Anonymous Authors
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Teaser video-->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <!-- Your video here -->
+       <img src="static/images/fig_graphical_abstract_d.png">
+        <h2 class="subtitle has-text-centered">
+          <i>DeltaConsistency</i> enables flexible prompt-based face re-aging of any real-world video or CGI to younger (de-aged) or older (aged) direction with high fidelity and temporal coherence. In contrast to conventional StyleGAN-based approaches, it is built on diffusion model, a variety of input (here, side face (left), cartoon-style (center), computer-generated images (right)) can be seamlessly de-/aged.
+        </h2>
+
+        
+    </div>
+  </div>
+</section>
+ 
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Face re-aging has garnered popularity in computer graphics applications due to its cost efficiency. For practical use, it is imperative to edit faces in a given real-video with temporal consistency without color flickering or geometric distortion. However, an approach to temporally consistent face re-aging is barely explored, lagging behind the those of image-level one. In this paper, we therefore tackle this issue by proposing video face re-aging diffusion models, coined \textit{DeltaConsistency} which is capable of temporally consistent editing with high-fidelity within real-video. Unlike existing face re-aging networks which generate entire pixels in image, we focus on age-related visual margin, delta. Since this delta brings stability for facial re-aging visual effects, our system ensure the temporal coherence without separate fine-tuning or additional condition like facial mask. Moreover, prompt-driven local editing is adopted under diffusion model, our method takes advantage of flexible editing. Comprehensive experiments demonstrate the superiority of our proposed method with improved re-aging results on real-world video editing and out-of-domain video, significantly surpassing existing video editing models. Our framework achieve a state-of-the-art in video face re-aging.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> 
+
+<!-- How It Works -->
+<section class="hero">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <br>
+        <h2 class="title is-3">How It Works</h2>
+        <div class="column">
+          <img src="static/images/how_it_works.png" style="margin-left: -11%;"/>
+          <br>
+          <h2 class="subtitle has-text-centered">Conceptual behavior of delta operation</h2>
+        </div>
+        <br>
+        <div class="content has-text-justified">
+          Instead of generating entire pixels in an image, our method focus on faciliating the delta for temporal consistency within a video. In addition, by optimizing null-text embeddings with multiple keyframes, global semantic consistency can be further enhanced. 
+        </div>
+        <br>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Method overview -->
+<section class="hero is-light">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <br>
+        <h2 class="title is-3">Method Overview</h2>
+        <div class="column">
+          <img src="static/images/fig_pipeline.png"/>
+          <br>
+          <h2 class="subtitle has-text-centered">Overview of our DeltaConsistency</h2>
+        </div>
+        <br>
+        <div class="content has-text-justified">
+          Our model leverage the delta scheme, thus it can boost the 2D diffusion model to video diffusion model.
+        </div>
+        <br>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Qualitative Comparison: General Video Editing -->
+<section class="hero">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <div class="column ">
+        <br>
+        <div class="section-title">
+          <h2 class="title is-3 is-centered" id="additional">Qualitative Comparison</h2>
+          Prompt-based General Video Editing Methods
+        </div>
+        <br>
+        <div class="publication-video-small">
+          <div style="display: flex; align-items: center; margin-left: -8%; margin-left: -8%;">
+            <div style="transform: rotate(-90deg);">
+                Age<br>48&rarr;30
+            </div>
+            <video id="sampler" autoplay controls loop muted width="100%">
+                <source src="static/images/compare_general_video_editing_00.mp4" type="video/mp4">
+            </video>
+          </div>
+          
+          <div style="display: flex; align-items: center; margin-left: -8%;">
+            <div style="transform: rotate(-90deg);">
+                Age<br>30&rarr;60
+            </div>
+            <video id="sampler" autoplay controls loop muted width="100%">
+                <source src="static/images/compare_general_video_editing_01.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div style="display: flex; align-items: center; margin-left: -8%;">
+            <div style="transform: rotate(-90deg);">
+                Age<br>53&rarr;30
+            </div>
+            <video id="sampler" autoplay controls loop muted width="100%">
+                <source src="static/images/compare_general_video_editing_02.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div style="display: flex; align-items: center; margin-left: -8%;">
+            <div style="transform: rotate(-90deg);">
+                Age<br>42&rarr;60
+            </div>
+            <video id="sampler" autoplay controls loop muted width="100%">
+                <source src="static/images/compare_general_video_editing_03.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div style="display: flex; align-items: center; margin-left: -8%;">
+            <div style="transform: rotate(-90deg);">
+                Age<br>51&rarr;60
+            </div>
+            <video id="sampler" autoplay controls loop muted width="100%">
+                <source src="static/images/compare_general_video_editing_04.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div style="display: flex; align-items: center; margin-left: -8%;">
+            <div style="transform: rotate(-90deg);">
+                Age<br>33&rarr;60
+            </div>
+            <video id="sampler" autoplay controls loop muted width="100%">
+              <source src="static/images/compare_general_video_editing_05.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="columns vertical_center" style="margin-left: -4%; margin-right: -4%;"> 
+            <div class="column is-one-fifths"><div class="columns"><div class="column">
+              <p>Original</p>
+            </div></div></div>
+            
+            <div class="column is-one-fifths"><div class="columns"><div class="column">
+              <p>Ours</p>
+            </div></div></div>
+            
+            <div class="column is-one-fifths"><div class="columns"><div class="column">
+              <p>RAVE<br>CVPR 2024</p>
+            </div></div></div>
+            
+            <div class="column is-one-fifths"><div class="columns"><div class="column">
+              <p>VidToMe<br>CVPR 2024</p>
+            </div></div></div>
+
+            <div class="column is-one-fifths"><div class="columns"><div class="column">
+              <p>BIVDiff<br>CVPR 2024</p>
+            </div></div></div>
+
+            <div class="column is-one-fifths"><div class="columns"><div class="column">
+              <p>TokenFlow<br>ICLR 2024</p>
+            </div></div></div>
+
+            <div class="column is-one-fifths"><div class="columns"><div class="column">
+              <p>Rerender-A-Video<br>Siggraph Asia 2023</p>
+            </div></div></div>
+
+            <div class="column is-one-fifths"><div class="columns"><div class="column">
+              <p>Fate/Zero<br>ICCV 2023</p>
+            </div></div></div>
+
+            <div class="column is-one-fifths"><div class="columns"><div class="column">
+              <p>Text2Video-Zero<br>ICCV 2023</p>
+            </div></div></div>
+            
+            <div class="column is-one-fifths"><div class="columns"><div class="column">
+              <p>Pix2Video<br>ICCV 2023</p>
+            </div></div></div>
+          </div>
+          <h2 class="subtitle has-text-centered"><b>Our method outperforms existing video editing models in terms of re-aging performance, fidelity and temporal consistency</b></h2>
+        </div>
+        <br>
+      </div>
+    </div>
+  </div>
+</section>
+    
+
+<!-- Qualitative Comparison: Video Face Editing -->
+<section class="hero is-light">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <div class="column ">
+        <br>
+        <div class="section-title">
+          <h2 class="title is-3 is-centered" id="additional">Qualitative Comparison</h2>
+          Attribute-based Video Face Editing Methods
+        </div>
+        <br>
+        <div class="publication-video-small">
+
+
+          <div style="display: flex; align-items: center; margin-left: -8%;">
+            <div style="transform: rotate(-90deg);">
+                Age<br>45&rarr;30
+            </div>
+            <video id="sampler" autoplay controls loop muted width="100%">
+                <source src="static/images/compare_video_face_editing_00.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div style="display: flex; align-items: center; margin-left: -8%;">
+            <div style="transform: rotate(-90deg);">
+                Age<br>32&rarr;60
+            </div>
+            <video id="sampler" autoplay controls loop muted width="100%">
+                <source src="static/images/compare_video_face_editing_01.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div style="display: flex; align-items: center; margin-left: -8%;">
+            <div style="transform: rotate(-90deg);">
+                Age<br>44&rarr;60
+            </div>
+            <video id="sampler" autoplay controls loop muted width="100%">
+                <source src="static/images/compare_video_face_editing_02.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div style="display: flex; align-items: center; margin-left: -8%;">
+            <div style="transform: rotate(-90deg);">
+                Age<br>43&rarr;60
+            </div>
+            <video id="sampler" autoplay controls loop muted width="100%">
+                <source src="static/images/compare_video_face_editing_03.mp4" type="video/mp4">
+            </video>
+          </div>
+          
+          <div style="display: flex; align-items: center; margin-left: -8%;">
+            <div style="transform: rotate(-90deg);">
+                Age<br>40&rarr;60
+            </div>
+            <video id="sampler" autoplay controls loop muted width="100%">
+                <source src="static/images/compare_video_face_editing_04.mp4" type="video/mp4">
+            </video>
+          </div>
+          
+          <div class="columns vertical_center" style="margin-left: -4%; margin-right: -4%;">
+            <div class="column is-one-fifths"><div class="columns"><div class="column">
+              <p>Original</p>
+            </div></div></div>
+            
+            <div class="column is-one-fifths"><div class="columns"><div class="column">
+              <p>Ours</p>
+            </div></div></div>
+            
+            <div class="column is-one-fifths"><div class="columns"><div class="column">
+              <p>STIT<br>Siggraph Asia 2022</p>
+            </div></div></div>
+            
+            <div class="column is-one-fifths"><div class="columns"><div class="column">
+              <p>StyleGANEX<br>ICCV 2023</p>
+            </div></div></div>
+
+            <div class="column is-one-fifths"><div class="columns"><div class="column">
+              <p>DiffusionVAE<br>CVPR 2023</p>
+            </div></div></div>
+
+            <div class="column is-one-fifths"><div class="columns"><div class="column">
+              <p>VIVE3D<br>CVPR 2023</p>
+            </div></div></div>
+          </div>
+          <h2 class="subtitle has-text-centered"><b>Our method works on Out-Of-Distribution video in contrast on video face editing methods.</b></h2>
+        </div>
+        <br>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Out-Of-Domain Results -->
+<section class="hero">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <br>
+        <div class="section-title">
+          <h2 class="title is-3 is-centered" id="additional">Out-Of-Domain Test</h2>
+        </div>
+        <br>
+        <div class="publication-video-small">
+          To Old Direction
+          <video id="sampler" autoplay controls loop muted width="100%">
+            <source src="static/images/ood_01.mp4"
+                    type="video/mp4">
+          </video>
+          <div class="columns vertical_center">
+            <div class="column is-one-fifths"><div class="columns"><div class="column">
+              <p>Original</p>
+            </div></div></div>
+            
+            <div class="column is-one-fifths"><div class="columns"><div class="column">
+              <p>Ours (Aged)</p>
+            </div></div></div>
+
+            <div class="column is-one-fifths"><div class="columns"><div class="column">
+              <p>Delta (Positive)</p>
+            </div></div></div>
+            
+            <div class="column is-one-fifths"><div class="columns"><div class="column">
+              <p>Delta (Negative)</p>
+            </div></div></div>
+            
+            <div class="column is-one-fifths"><div class="columns"><div class="column">
+              <p>Flow (Forward)</p>
+            </div></div></div>
+            
+            <div class="column is-one-fifths"><div class="columns"><div class="column">
+              <p>Flow (Backward)</p>
+            </div></div></div> 
+          </div>
+          <h2 class="subtitle has-text-centered"><b>Our method also can perform face re-aging with Out-Of-Domain video, e.g., cartoon.</b></h2>
+        </div>
+        <br>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Movie Trailer Results -->
+<section class="hero">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <br>
+        <div class="section-title">
+          <h2 class="title is-3 is-centered" id="additional">Movie Trailer</h2>
+        </div>
+        <br>
+        <div class="publication-video-small">
+          To Old Direction
+          <video id="sampler" autoplay controls loop muted width="100%">
+            <source src="static/images/trailer_01.mp4"
+                    type="video/mp4">
+          </video>
+          <div class="columns vertical_center">
+            <div class="column is-one-fifths"><div class="columns"><div class="column">
+              <p>Original</p>
+            </div></div></div>
+            
+            <div class="column is-one-fifths"><div class="columns"><div class="column">
+              <p>Ours (De-Aged)</p>
+            </div></div></div>
+
+            <div class="column is-one-fifths"><div class="columns"><div class="column">
+              <p>Delta (Positive)</p>
+            </div></div></div>
+            
+            <div class="column is-one-fifths"><div class="columns"><div class="column">
+              <p>Delta (Negative)</p>
+            </div></div></div>
+            
+            <div class="column is-one-fifths"><div class="columns"><div class="column">
+              <p>Flow (Forward)</p>
+            </div></div></div>
+            
+            <div class="column is-one-fifths"><div class="columns"><div class="column">
+              <p>Flow (Backward)</p>
+            </div></div></div> 
+          </div>
+          <h2 class="subtitle has-text-centered"><b>Our method is also ready to perform face re-aging on movie trailer.</b></h2>
+        </div>
+        <br>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
